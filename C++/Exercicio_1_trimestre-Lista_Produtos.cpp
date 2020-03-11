@@ -6,6 +6,7 @@
 
 using namespace std;
 
+//Estrutura do Produto
 struct produto_t
 {
     char nome[50];
@@ -17,8 +18,14 @@ struct produto_t
 //cria a lista a lista de produtos com a estrutura
 static list<produto_t> listaProdutos;
 
+// Funções globais //
+// static so a classe acessa, caso contrario qualquer uma do sistema pode acessar
+
+// Função de insere os produtos na Lista
 void inserirProdutos() 
 {
+    // Com static a variavel fica guardada na memoria e nao perde valor, exemplo seria usar em um contador...
+    // static produto_t prod;
     produto_t prod;
     // Pede as informações --------------------
     printf("Digite o nome do Produto \n");
@@ -37,6 +44,7 @@ void inserirProdutos()
     listaProdutos.push_back(prod);
 };
 
+// Função que lista os produtos Cadastrados
 void listarProdutos()
 {
     printf("==========================================================\n");
@@ -51,11 +59,12 @@ void listarProdutos()
 
 };
 
+// Função de menu do Sistema // olar sobre p "fgets" subtitui o "strcmp"
 void menu()
 {
-    char pg[3];
-    while(true) {
-
+    char pg[10];
+    int i = 0;
+    while(1) {
         printf("Deseja inserir um produto?: ");
         scanf("%s", pg);
 
@@ -72,6 +81,7 @@ void menu()
     };
 };
 
+// Função Main
 int main () 
 {
     menu();
