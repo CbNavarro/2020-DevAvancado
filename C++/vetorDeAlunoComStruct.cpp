@@ -4,7 +4,7 @@
 
 #define cond 10
 
-struct adicao_produtos
+struct str_produtos
 {
     char nome[50]; 
     int codigo;
@@ -16,7 +16,7 @@ int main () {
     int vetor[cond], t;
     char pg[3];
 
-    adicao_produtos produto[20];
+    str_produtos produto[20];
 
     for (t = 0; t < cond; t++) {
 
@@ -44,6 +44,7 @@ int main () {
 
             printf("Fechando... \n");
             t = 10;
+
         }
     }
 };
